@@ -1,0 +1,462 @@
+html, body,p, input, button, h1, h2, h3, h4, h5 {
+  font-family: "Open Sans";
+}
+body {
+    margin: 0;
+    width: auto;
+    opacity: 1;
+    font-size: 2em;
+    padding: 0;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: url(../submarine-168884.jpg);
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  z-index: -10;
+}
+.wrapper {
+  width: 100%
+}
+.auth {
+  position: fixed;
+  width: 375px;
+  border-radius: 15px;
+  height: 550px;
+  left: 50%;
+  top: 5%;
+  bottom: 10%;
+  right: 40%;
+  margin-left: -195px;
+background: linear-gradient(135deg, #0a1233 0%, black 26%,grey 72%,black 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a1233', endColorstr='#146882',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  visibility: visible;
+  transition: all 250ms ease-out;
+  z-index: 100;
+}
+.auth.close {
+  visibility: hidden;
+  transition: all 250ms ease-out;
+}
+.auth.opa {
+ opacity: 0.825;
+}
+.login-title {
+  positon: fixed;
+  width: 100%;
+  color: #EBFAFC;
+  margin-top: 220px;
+  margin-left: .5px;
+  opacity: 0.8;
+  visibility: visible;
+}
+.login-title h3{
+   font-weight: 200;
+   font-size: 0.5em;
+   text-align:center;
+}
+
+.auth.close .login-title {
+  visibility: hidden !important;
+  transition: all 250ms ease-in;
+}
+.image-size {
+  position: fixed;
+  width: 225px;
+  height: 225px;
+  margin-top: 20px;
+  margin-left: 75px;
+  opacity: 1;
+  visibility: visible;
+}
+.auth.close .image-size {
+  visibility: hidden;
+  transition: all 250ms ease-in;
+}
+
+input {
+  background-color: transparent;
+  margin-top: 5%;
+  border: none;
+  border-bottom: 1px solid #ffffff; 
+  opacity: 1;
+}
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+}
+.user-icon {
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.7;
+  margin-top: 20px;
+  margin-left: 40.5px;
+  font-size: 0.75em;
+}
+.username,
+.password {
+  width: 70%;
+  height: 30px;
+  padding: .25em 0 .25em .25em;
+  margin-left: 40.5px;
+}
+.username:focus,
+.password:focus {
+ border: 1px solid #ff656c;
+}
+
+input[placeholder] {
+  cursor: arrow;
+  font-size: .5em;
+  color: #ffffff;
+  padding: 0.5em .25em .25em 2.2em;
+}
+input[placeholder]:focus
+{
+  border-color: #ff656c;
+}
+.fa:focus,
+.fa:active,
+.fa:checked{
+  opacity: 1;
+  color: #ff656c !important;
+  background-color: #ff656c;
+}
+
+.username:focus,
+.password:focus{
+  border: 1px solid #ff656c;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 0.65em;
+  line-height: 22px;
+  font-weight: 300;
+  font-family: "Helvetica";
+  color: #efefef;
+  background-color: lightseagreen;
+  border: none;
+  padding: .35em 2.35em .35em 2.35em;
+  margin-top: 42.5px;
+  border-radius: 20px;
+  margin-left: 107.5px;
+  opacity: 1;
+  transition: opacity 250ms;
+}
+.btn.loading {
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  border-radius: 50px;
+  margin-left: 167.5px;
+  margin-top: 35px;
+  border: 4.5px solid #efefef;
+  padding: 1.5em;
+  background-color: transparent;
+  border-color:  #e8a7bb #ea8fac   #e89ab2 #e588a4;
+  animation: spin 0.5s linear infinite;
+  transition: opacity 550ms ease-out;
+}
+
+@keyframes spin{
+  0%{ opacity: 1; transform: rotate(30deg);}
+  50%{opacity: 0.8;}
+  100%{opacity: 1; transform: rotate(360deg);}
+}
+
+.forget{
+  font-size: 0.45em;
+}
+.forget p {
+   color: #12123;
+  margin-left: 85px;
+}
+.forget>p>span {
+  display: inline;
+  margin-left: 20px;
+}
+.forget>p>span>a {
+   color: #efefef;
+   text-decoration:none;
+}
+
+/*--- overlay ---*/
+.overlay {
+  position: absolute;
+  background-color: #efefef;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 250ms ease-in;
+}
+.overlay.open {
+  visibility: visible;
+  transition: all 250ms ease-in;
+  animation: flash .2s linear;
+  overflow: hidden;
+}
+@keyframes flash {
+  0% {opacity: 0;}
+  80%{opacity: 0.8;}
+  100%{opacity: 1;}
+}
+
+/*--- bottom-buttom---*/
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 375px;
+  height: 40px;
+  background-color: #000;
+  opacity: 1 !important;
+  transition: opacity 200ms ease-in;
+}
+div.no h3 {
+font-size: 0.5em; color: #efefef; margin-top: 10px;margin-left: 5px;}
+.bottom-button {
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 18px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 3px solid #fafafa;
+  transition: 250ms opacity linear;
+}
+.bottom-button:hover{
+  background-color: #efefef;
+  border: none;
+}
+.bottom-button.back {
+  z-index: 50;
+  border: none;
+  background-color:#f43d6d;
+  transition: 250ms opacity ease-out;
+  animation: spin2 .25s ease-out; 
+}
+@keyframes spin2{
+  0%{ opacity: 1; transform:  rotate(30deg);}
+  90%{opacity:1;}
+  100%{ opacity: 1; transform: 
+    scale(80);}
+}
+.view {
+  position: absolute;
+  font-size: 0.6em;
+  top: 85%;
+  left: 45%;
+  margin-top: 50px;
+}
+
+.profile {
+  z-index: 0.1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 248px;
+  background: url("http://cdn.images.express.co.uk/img/dynamic/1/590x/fog-448188.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;  
+}
+.overlay-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #473F5B;
+  opacity: 0.2;
+}
+
+.profile-pic{
+  width: 60px;
+  height: 60px;
+  border: 2px solid #f9f9f9;
+  border-radius: 50%;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.name {
+  font-size: 0.75em;
+  color: #ffffff;
+  margin-top: -60px;
+  margin-left: 120px;
+}
+.writing {
+  position: absolute;
+  color: #efefef;
+  font-size: 0.35em;
+  margin-top: -5px;
+  margin-left: 100px;
+}
+.profile-left {
+  position: absolute;
+  top: 279px;
+  left: 0;
+  width: 187.5px;
+  height: 80px;
+  border-bottom: 1.25px solid #9aa6a9;
+  border-right: 1px solid #697a87; 
+}
+li {
+  list-style: none;
+}
+.calendar {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  top: 160px;
+  z-index: 5;
+}
+.calendar-list{
+  position: relative;
+  width: 100%;
+}
+.calendar-list>li {
+  display: inline;
+  width: 15%;
+  float: left;
+  margin-left: 22.5px;
+}
+.line-ca,
+.line-ca2{
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  top: 45px;
+}
+.line-ca{
+  left: 10px;
+}
+.line-ca2{
+  right: 50px;
+}
+.line-ca:nth-child(1),
+.line-ca2:nth-child(2){
+  transform: rotate(-45deg);
+}
+.line-ca:nth-child(2),
+.line-ca2:nth-child(1){
+  transform: rotate(45deg);
+}
+
+.line-ca:nth-child(2){
+  top: 58px;
+}
+.line-ca2:nth-child(2){
+  top: 58px;
+}
+.calendar-list li>h4 {
+  position: absolute;
+  font-size: 0.5em;
+  margin-top: 20px;
+  color:#f9f9f9;
+}
+.calendar-list li>h5{
+  font-size: 0.5em;
+  margin-top: 50px;
+  margin-left: 5px;
+  color:#f9f9f9;
+}
+.profile-left h5
+ {
+  font-size: 0.5em;
+  color: #516072;
+  margin-left: 70px;
+  margin-top: 5px;
+  font-weight: 300;
+  opacity: 0.75;
+}
+.profile-right h5{
+  font-size: 0.5em;
+  color: #516072;
+  margin-left: 70px;
+  margin-top: 5px;
+  font-weight: 300;
+  opacity: 0.75;
+}
+.profile-left span {
+  position: absolute;
+  font-size: 0.5em;
+  color: #697a87;
+  margin-left: 35px;
+  margin-top: -15px;
+  opacity: 1;
+}
+.profile-right span {
+  position: absolute;
+  font-size: 0.5em;
+  color: #697a87;
+  margin-left: 45px;
+  margin-top: -15px;
+  opacity: 1;
+}
+.profile-right{
+  position: absolute;
+  top: 279px;
+  right: 0;
+  width: 187.5px;
+  height: 80px;
+  border-bottom: 1.25px solid #9aa6a9;
+}
+
+.tasks {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 360px;
+  left: 0;
+  right: 0;
+  background-color: #efefef;
+}
+.task{
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #9aa6a9;
+}
+.task h3{
+  font-size: 0.5em;
+  color: #697a87;
+  font-weight: 300;
+  margin-left: 65px;
+  margin-top: 20px;
+}
+.task span {
+  float: right;
+  font-size: 0.4em;
+  color: #9aa6a9;
+  margin-top: -35px;
+  margin-right: 10px;
+}
+.task span>i {
+  margin-right: 10px;
+}
+
+.task-pic {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  margin-left: 15px;
+  margin-top: -2px;
+}
